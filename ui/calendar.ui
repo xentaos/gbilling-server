@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkWindow" id="window">
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="type_hint">dialog</property>
+    <child>
+      <object class="GtkCalendar" id="calendar">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="year">2010</property>
+        <property name="month">5</property>
+        <property name="day">23</property>
+      </object>
+    </child>
+  </object>
+</interface>

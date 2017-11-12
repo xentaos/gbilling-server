@@ -1,0 +1,63 @@
+# Project: gbilling-server
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = gbilling-server_private.res
+OBJ  = ../src/callback.o ../src/gui.o ../src/main.o ../src/server.o ../src/sockc.o ../src/sqldb.o ../src/gbilling.o ../src/sqlite3.o ../src/sqlcb.o ../src/setting.o ../src/sound.o $(RES)
+LINKOBJ  = ../src/callback.o ../src/gui.o ../src/main.o ../src/server.o ../src/sockc.o ../src/sqldb.o ../src/gbilling.o ../src/sqlite3.o ../src/sqlcb.o ../src/setting.o ../src/sound.o $(RES)
+LIBS =  -mwindows -L"$(GTK_BASEPATH)/lib" -lgtk-win32-2.0 -lgdk-win32-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangowin32-1.0 -lgdi32 -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lgthread-2.0 -lws2_32 -lwinmm  
+INCS = 
+CXXINCS = 
+BIN  = gbilling-server.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS) -Wall -Wpointer-arith -O2 -mms-bitfields -I"$(GTK_BASEPATH)/include/gtk-2.0" -I"$(GTK_BASEPATH)/lib/gtk-2.0/include" -I"$(GTK_BASEPATH)/include/atk-1.0" -I"$(GTK_BASEPATH)/include/pango-1.0" -I"$(GTK_BASEPATH)/include/glib-2.0" -I"$(GTK_BASEPATH)/include/cairo" -I"$(GTK_BASEPATH)/lib/glib-2.0/include" -I"$(GTK_BASEPATH)/include/libglade-2.0" -I"$(GTK_BASEPATH)/include/libgladeui-1.0" -I"$(GTK_BASEPATH)/include" -DSQLITE_SUPPORT -DGTK_DISABLE_DEPRECATED=1 -DG_DISABLE_DEPRECATED=1  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before gbilling-server.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "gbilling-server.exe" $(LIBS)
+
+../src/callback.o: ../src/callback.c
+	$(CC) -c ../src/callback.c -o ../src/callback.o $(CFLAGS)
+
+../src/gui.o: ../src/gui.c
+	$(CC) -c ../src/gui.c -o ../src/gui.o $(CFLAGS)
+
+../src/main.o: ../src/main.c
+	$(CC) -c ../src/main.c -o ../src/main.o $(CFLAGS)
+
+../src/server.o: ../src/server.c
+	$(CC) -c ../src/server.c -o ../src/server.o $(CFLAGS)
+
+../src/sockc.o: ../src/sockc.c
+	$(CC) -c ../src/sockc.c -o ../src/sockc.o $(CFLAGS)
+
+../src/sqldb.o: ../src/sqldb.c
+	$(CC) -c ../src/sqldb.c -o ../src/sqldb.o $(CFLAGS)
+
+../src/gbilling.o: ../src/gbilling.c
+	$(CC) -c ../src/gbilling.c -o ../src/gbilling.o $(CFLAGS)
+
+../src/sqlite3.o: ../src/sqlite3.c
+	$(CC) -c ../src/sqlite3.c -o ../src/sqlite3.o $(CFLAGS)
+
+../src/sqlcb.o: ../src/sqlcb.c
+	$(CC) -c ../src/sqlcb.c -o ../src/sqlcb.o $(CFLAGS)
+
+../src/setting.o: ../src/setting.c
+	$(CC) -c ../src/setting.c -o ../src/setting.o $(CFLAGS)
+
+../src/sound.o: ../src/sound.c
+	$(CC) -c ../src/sound.c -o ../src/sound.o $(CFLAGS)
+
+gbilling-server_private.res: gbilling-server_private.rc 
+	$(WINDRES) -i gbilling-server_private.rc --input-format=rc -o gbilling-server_private.res -O coff 
