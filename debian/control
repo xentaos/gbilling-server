@@ -14,8 +14,8 @@ Build-Depends: debhelper (>= 7.0.50~),
                libgtk2.0-dev, 
                libpopt0
 Standards-Version: 3.9.7
-Homepage: https://github.com/xentaos/paketku
-Vcs-Browser: https://github.com/xentaos/paketku.git
+Homepage: https://github.com/xentaos/gbilling-server
+Vcs-Browser: https://github.com/xentaos/gbilling-server.git
 
 Package: gbilling-server
 Architecture: all
